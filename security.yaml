@@ -1,0 +1,27 @@
+# config/packages/security.yaml
+security:
+  encoders:
+    Symfony\Component\Security\Core\User\User: plaintext
+
+  providers:
+    in_memory:
+      memory:
+        users:
+          user:
+            password: userpassword
+            roles: 'ROLE_USER'
+
+  firewalls:
+    secured_area:
+      pattern: ^/
+      anonymous: ~
+      form_login:
+        login_path: login
+        check_path: login
+      guard:
+        authenticators:
+          - App\Security\LoginFormAuthenticator
+          - App\Security\TwoFactorAuthenticator
+
+  access_control:
+    - { path: ^/dashboard, roles: ROLE_USER }

@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Autentificazione" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+    <TestRunner directory="$PROJECT_DIR$" file="$PROJECT_DIR$/../Autentificazione" />
+    <method v="2" />
+  </configuration>
+</component>

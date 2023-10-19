@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <form action="{{ path('login') }}" method="post">
+            {% if error %}
+                <p class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+            {% endif %}
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="_password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
